@@ -38,7 +38,7 @@ export const UserAvatar = memo(
             />
           </TouchableOpacity>
         ) : (
-          <div
+          <TouchableOpacity
             className={cn(
               "flex justify-center items-center shrink-0",
               "bg-primary-color text-primary-bg uppercase font-bold rounded-full",
@@ -51,10 +51,10 @@ export const UserAvatar = memo(
                   size === "big",
               },
             )}
-            onClick={handleOpen}
+            onPress={handleOpen}
           >
             {userName?.slice(0, 1)}
-          </div>
+          </TouchableOpacity>
         )}
       </>
     );
