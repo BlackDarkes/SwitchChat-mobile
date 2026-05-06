@@ -25,7 +25,7 @@ export const UserAvatar = memo(
     return (
       <TouchableOpacity
         onPress={handleOpen}
-        disabled={isAvatar} // Если это просто аватар без клика
+        disabled={isAvatar} 
         activeOpacity={0.7}
       >
         {userAvatar ? (
