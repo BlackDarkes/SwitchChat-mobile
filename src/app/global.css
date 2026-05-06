@@ -2,3 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    /* Твои основные цвета (Light) */
+    --accent-bg: #e1f5fe;
+    --primary-bg: #ffffff;
+    --secondary-bg: #8e8e93;
+    --chat-bg: #ededed;
+    --message-bg: #ffffff;
+    --search-bg: #e6e6e6;
+    --opacity-bg: rgba(0, 0, 0, 0.4);
+    --accent-color: #007aff;
+    --inactive-color: #8e8e93;
+    --primary-color: #1c1c1e;
+    --secondary-color: #8e8e93;
+    --not-read: #ffffff;
+    --opacity-color: rgba(0, 0, 0, 0.7);
+    --placeholder-color: #8e8e93;
+    --border-color: #e6e6e6;
+
+    /* Shadcn/UI цвета (переведены из oklch в hex) */
+    --background: #ffffff;
+    --foreground: #171717;
+    --card: #ffffff;
+    --card-foreground: #171717;
+    --popover: #ffffff;
+    --popover-foreground: #171717;
+    --primary: #262626;
+    --primary-foreground: #fafafa;
+    --secondary: #f5f5f5;
+    --secondary-foreground: #262626;
+    --muted: #f5f5f5;
+    --muted-foreground: #737373;
+    --accent: #f5f5f5;
+    --accent-foreground: #262626;
+    --destructive: #b91c1c;
+    --border: #e5e5e5;
+    --input: #e5e5e5;
+    --ring: #a3a3a3;
+    --radius: 10px;
+  }
+
+  .dark {
+    /* Твои основные цвета (Dark) */
+    --accent-bg: #0e141b;
+    --primary-bg: #1c2733;
+    --secondary-bg: #7f91a4;
+    --chat-bg: #17212b;
+    --message-bg: #2b5278;
+    --search-bg: #101921;
+    --opacity-bg: rgba(255, 255, 255, 0.1);
+    --accent-color: #4da8da;
+    --inactive-color: #6c7883;
+    --primary-color: #e6e6e6;
+    --secondary-color: #7f91a4;
+    --not-read: #000000;
+    --opacity-color: rgba(255, 255, 255, 0.7);
+    --placeholder-color: #8e8e93;
+    --border-color: #101921;
+
+    /* Shadcn/UI цвета (Dark) */
+    --background: #171717;
+    --foreground: #fafafa;
+    --card: #262626;
+    --card-foreground: #fafafa;
+    --popover: #262626;
+    --popover-foreground: #fafafa;
+    --primary: #e5e5e5;
+    --primary-foreground: #262626;
+    --secondary: #333333;
+    --secondary-foreground: #fafafa;
+    --muted: #333333;
+    --muted-foreground: #a3a3a3;
+    --accent: #333333;
+    --accent-foreground: #fafafa;
+    --destructive: #ef4444;
+    --border: rgba(255, 255, 255, 0.1);
+    --input: rgba(255, 255, 255, 0.15);
+    --ring: #737373;
+  }
+}

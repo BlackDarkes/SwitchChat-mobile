@@ -1,7 +1,8 @@
 import { UserAvatar } from "@/entities/user";
 import { Link } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import "./global.css";
+import { Button, Text } from "@/shared/ui";
 
 export default function Index() {
   return (
@@ -15,11 +16,15 @@ export default function Index() {
         handleOpen={() => {}}
       />
       <Link href={"/about/about"}>О нас</Link>
-      <View className="flex-1 items-center justify-center bg-white">
+      <View className="block items-center justify-center bg-white h-[50px]">
         <Text className="text-xl font-bold text-blue-500">
           Welcome to Nativewind!
         </Text>
       </View>
+      <Button>
+        <Text>CLick to NativeWind</Text>
+      </Button>
+      <Text>Test Message</Text>
     </View>
   );
 }
