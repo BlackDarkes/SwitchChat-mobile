@@ -1,6 +1,7 @@
 import { cn } from "@/shared/lib/utils";
+import { Text } from "@/shared/ui";
 import { memo } from "react";
-import { Image, TouchableOpacity } from "react-native";
+import { Image, TouchableOpacity, View } from "react-native";
 
 interface IUserAvatarProps {
   userAvatar: string | undefined | null;
@@ -19,44 +20,32 @@ export const UserAvatar = memo(
     size = "middle",
     handleOpen,
   }: IUserAvatarProps) => {
+    const sizeClasses = size === "middle" ? "w-10 h-10" : "w-12 h-12";
+
     return (
-      <>
+      <TouchableOpacity
+        onPress={handleOpen}
+        disabled={isAvatar} // Если это просто аватар без клика
+        activeOpacity={0.7}
+      >
         {userAvatar ? (
-          <TouchableOpacity onPress={handleOpen}>
-            <Image
-              src={userAvatar}
-              alt="avatar"
-              width={60}
-              height={60}
-              className={cn("shrink-0 cursor-pointer", {
-                "cursor-default": isAvatar,
-                "w-[clamp(30px,4vw,40px)] h-[clamp(30px,4vw,40px)]":
-                  size === "middle",
-                "w-[clamp(40px,4vw,50px)] h-[clamp(40px,4vw,50px)]":
-                  size === "big",
-              })}
-            />
-          </TouchableOpacity>
+          <Image
+            source={{ uri: userAvatar }}
+            className={cn("rounded-full", sizeClasses)}
+          />
         ) : (
-          <TouchableOpacity
+          <View
             className={cn(
-              "flex justify-center items-center shrink-0",
-              "bg-primary-color text-primary-bg uppercase font-bold rounded-full",
-              "cursor-pointer",
-              {
-                "cursor-default": isAvatar,
-                "w-[clamp(30px,4vw,40px)] h-[clamp(30px,4vw,40px)]":
-                  size === "middle",
-                "w-[clamp(40px,4vw,50px)] h-[clamp(40px,4vw,50px)]":
-                  size === "big",
-              },
+              "flex justify-center items-center bg-primary rounded-full",
+              sizeClasses,
             )}
-            onPress={handleOpen}
           >
-            {userName?.slice(0, 1)}
-          </TouchableOpacity>
+            <Text className="text-primary-foreground uppercase font-bold text-base">
+              {userName?.slice(0, 1)}
+            </Text>
+          </View>
         )}
-      </>
+      </TouchableOpacity>
     );
   },
 );
